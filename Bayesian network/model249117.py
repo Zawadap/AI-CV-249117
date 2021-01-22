@@ -85,7 +85,6 @@ awareness_of_consequences = Node(ConditionalProbabilityTable([
     ["yes", "long","advanced","not aware", 0.1],
     ["yes", "long","advanced","aware", 0.4],
     ["yes", "long","advanced","fully aware", 0.5]
-    
 ], [training.distribution , work_experience.distribution , past_experience.distribution]), name="awareness_of_consequences")
 
 attitude_towards_cwm = Node(ConditionalProbabilityTable([
@@ -245,7 +244,7 @@ behaviour_towards_cwm = Node(ConditionalProbabilityTable([
 
 # Create a Bayesian Network and add states
 universe = BayesianNetwork()
-universe.add_states(work_experience, training, attitude_towards_cwm, past_experience, supervision, social_pressure)
+universe.add_states(work_experience,training,past_experience,supervision,social_pressure, awareness_of_consequences, attitude_towards_cwm, behaviour_towards_cwm)
 
 # Add edges connecting nodes
 universe.add_edge(work_experience,awareness_of_consequences)
