@@ -89,8 +89,15 @@ awareness_of_consequences = Node(ConditionalProbabilityTable([
 
 attitude_towards_cwm = Node(ConditionalProbabilityTable([
     ["not aware", "negative", 0],
+    ["aware", "negative", 0],
+    ["fully aware", "negative", 0],
+    ["not aware", "neutral", 0],
     ["aware", "neutral", 0],
+    ["fully aware", "neutral", 0],
+    ["not aware", "positive", 1],
+    ["aware", "positive", 1],
     ["fully aware", "positive", 1]
+
 
 ], [awareness_of_consequences.distribution]), name="attitude_towards_cwm")
 
